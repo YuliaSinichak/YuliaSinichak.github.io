@@ -30,7 +30,7 @@ header {
 
 .menu {
   text-align: center;
-  margin: 20px 0;
+  margin: 10px;
   flex-wrap: wrap;
 }
 
@@ -239,6 +239,34 @@ header {
 
 #resourceForm button:hover {
   background-color: #5e7e1f;
+}
+
+#cityStatus {
+  display: none;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+.city-status-btn {
+  padding: 10px 10px;
+  background-color: #6B8E23;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.city-status-btn:hover {
+  background-color: #5e7e1f;
+  transform: scale(1.03);
 }
 
 
