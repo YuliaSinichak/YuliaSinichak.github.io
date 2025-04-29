@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Симулятор міста</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="header">City Builder Simulator v.1000</header>
+
+<main>
+
+  <div class="menu">
+    <button onclick="showSection('city')">Моє місто</button>
+    <button onclick="showSection('build')">Будівництво</button>
+    <button onclick="showSection('resources')">Ресурси міста</button>
+  </div>
+
+  <div id="city" class="section">
+    <h2 class="title">Моє місто</h2>
+    <div class="grid" id="cityGrid"></div>
+  </div>
+  
+  <div id="build" class="section hidden">
+    <h2 class="title">Будівництво</h2>
+    <p>Оберіть тип об'єкта:</p>
+    <select id="objectType">
+      <option value="🏠">Будинок</option>
+      <option value="🛣️">Дорога</option>
+      <option value="🏭">Підприємство</option>
+    </select>
+    <p>Клітинка: <span id="selectedCellInfo">Жодної клітинки не обрано</span></p>
+    <div class="grid" id="buildGrid"></div>
+    <button id="buildButton">Будувати</button>
+    <p id="buildInfo"></p>
+  </div>
+
+  <div id="resources" class="section hidden">
+    <h2 class="title">Ресурси міста</h2>
+    <ul>
+      <li>Бюджет: <span id="budget">10000</span> ₴</li>
+      <li>Матеріали: <span id="materials">1000</span></li>
+      <li>Будівельники: <span id="workers">20</span></li>
+    </ul>
+    <div id="resourceFormContainer">
+      <h3>Додати ресурси</h3>
+      <form id="resourceForm">
+        <label for="resourceName">Ресурс:</label>
+        <select id="resourceName">
+          <option value="budget">Бюджет</option>
+          <option value="materials">Матеріали</option>
+          <option value="workers">Робітники</option>
+        </select>
+        <label for="resourceAmount">Кількість:</label>
+        <input type="number" id="resourceAmount" min="1" required>
+        <button type="submit">Додати</button>
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer__content">
+    <p>© 2025 City Builder Simulator v.1000. All rights protected by me.</p>
+    <p>Розроблено в рамках курсу "Вебтехнології та розробка вебзастосувань"</p>
+  </div>
+  <div class="footer__content">
+    <p>Контакти</p>
+    <p><a href="https://www.linkedin.com/in/yuliia-synychak" target="_blank">LinkedIn</a></p>
+    <p><a href="https://github.com/YuliaSinichak" target="_blank">GitHub</a></p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
