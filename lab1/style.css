@@ -31,6 +31,36 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   }
 
+  .tooltip {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .tooltiptext {
+    visibility: hidden;
+    width: 100px;
+    background-color: #f4f4f4;
+    color: #000;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; 
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 13px;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
   
 
   .menu {

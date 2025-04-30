@@ -153,11 +153,10 @@ buildButton.addEventListener('click', () => {
 function showCityStatus() {
   const cityStatusEl = document.getElementById('cityStatus');
 
-  // Перевірка, чи видима інформація
   if (cityStatusEl.style.display === 'block') {
-    cityStatusEl.style.display = 'none'; // Приховати
+    cityStatusEl.style.display = 'none'; 
   } else {
-    cityStatusEl.style.display = 'block'; // Показати
+    cityStatusEl.style.display = 'block'; 
 
     const grid = document.querySelector('#city .grid');
     const cells = grid.querySelectorAll('.cell');
@@ -218,3 +217,39 @@ resourceForm.addEventListener('submit', (e) => {
 
   resourceAmountInput.value = '';
 });
+
+
+
+const objectType = document.getElementById('objectType');
+  const addBuildingForm = document.getElementById('addBuildingForm');
+
+  addBuildingForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById('buildingName').value.trim();
+    const emoji = document.getElementById('buildingEmoji').value.trim();
+    const budget = parseInt(document.getElementById('buildingBudget').value);
+    const materials = parseInt(document.getElementById('buildingMaterials').value);
+    const workers = parseInt(document.getElementById('buildingWorkers').value);
+
+    if (!name || !emoji || isNaN(budget) || isNaN(materials) || isNaN(workers)) {
+      alert('Будь ласка, заповніть всі поля коректно.');
+      return;
+    }
+
+    
+    const newOption = document.createElement('option');
+    newOption.value = emoji;
+    newOption.textContent = name;
+    objectType.appendChild(newOption);
+
+   
+    objectCosts[emoji] = {
+      budget: budget,
+      materials: materials,
+      workers: workers
+    };
+
+    
+    addBuildingForm.reset();
+  })

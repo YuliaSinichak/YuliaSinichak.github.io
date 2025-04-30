@@ -37,6 +37,21 @@
     <div class="grid" id="buildGrid"></div>
     <button id="buildButton">Будувати</button>
     <p id="buildInfo"></p>
+    
+    <form id="addBuildingForm">
+      <label for="buildingName">Тип будівлі:</label>
+      <input type="text" id="buildingName" required>
+      <label for="buildingEmoji">Емодзі будівлі:</label>
+      <input type="text" id="buildingEmoji" required>
+      <label for="buildingBudget">Бюджет:</label>
+      <input type="number" id="buildingBudget" required>
+      <label for="buildingMaterials">Матеріали:</label>
+      <input type="number" id="buildingMaterials" required>
+      <label for="buildingWorkers">Будівельники:</label>
+      <input type="number" id="buildingWorkers" required>
+      <button type="submit">Додати</button>
+    </form>
+   
   </div>
 
   <div id="resources" class="section hidden">
